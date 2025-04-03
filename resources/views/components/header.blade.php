@@ -61,7 +61,7 @@
 
                     <div class="dropdown">
                         <button class="dropdown-btn dropdown-btn-mob">
-                            <div class="no-mobile"> <x-heroicon-o-user-circle style="width: 30px; margin-right: 5px; position: relative; top: 5px;"/>
+                            <div class="no-mobile"> <x-heroicon-o-user-circle style="width: 30px; margin-right: 5px; "/>
                                 {{ Auth::user()->name }} {{ Auth::user()->surname }}
                             </div>
                             <div class="solo-mob" style="font-size: 14px; cursor: pointer;">
@@ -69,26 +69,28 @@
                             </div>
                         </button>
                         <div class="dropdown-content">
-                            <a href="{{ url('/miperfil') }}">Mi perfil</a>
+                            <a style="color: black; " href="{{ url('/miperfil') }}">Mi perfil</a>
                             @if( Auth::user()->rol === 'admin')
                             <a href="{{ url('/dashboard') }}">Metricas</a>
                             @endif  
-                            <hr>
+
                             @if( Auth::user()->rol === 'admin')
+                            <hr>
                             <a href="{{ url('/supercategorias') }}">Gestionar supercategorias</a>
                             <a href="{{ url('/categorias') }}">Gestionar categorias</a>
                             <a href="{{ url('/productos')}}">Gestionar productos</a>
                             <a href="{{ url('/pedidos')}}">Gestionar pedidos</a>
                             <a href="{{ url('/usuarios')}}">Gestionar Usuarios</a>
-                            @endif  
                             <hr>
+                            @endif  
+
                             <a href="{{ url('/carrito') }}">Ver el carrito</a>
                             <a href="{{ url('/pedidos/mispedidos') }}">Mis pedidos</a>
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
-                                <x-dropdown-link class="pd-mob" :href="route('logout')"
+                                <x-dropdown-link style="padding-left: 12px !important;" class="pd-mob" :href="route('logout')"
                                                  onclick="event.preventDefault();
                                                          this.closest('form').submit();">
                                     {{ __('Cerrar sesion') }}

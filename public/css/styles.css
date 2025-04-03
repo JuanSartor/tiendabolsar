@@ -606,7 +606,13 @@ button{
     margin-right: 10px;
     font-family: cursive;
 }
-
+.dropdown-btn-mob{
+    border-radius: 10px;
+    margin-top: 0px;
+    padding: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 /*query para mobile*/
 @media (max-width: 700px) {
