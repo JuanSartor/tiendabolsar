@@ -57,10 +57,15 @@
                     {{ __('Olvidaste tu contraseña?') }}
                 </a>
                 @endif
+                <div style=" display: flex;  gap: 10px;   align-items: center;">
+                    <x-button class="ml-3">
+                        {{ __('Ingresar') }}
+                    </x-button>
 
-                <x-button class="ml-3">
-                    {{ __('Ingresar') }}
-                </x-button>
+                    @if (Route::has('register'))
+                    <a  style="background-color: var(--verde-amarillento); border-radius: 8px; padding: 9px;" href="{{ route('register') }}" class="dropdown-btn btn-log-reg btn-log-reg-hover">{{ __('Registrarse') }}</a>
+                    @endif
+                </div>
             </div>
         </form>
 

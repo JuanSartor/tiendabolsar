@@ -7,6 +7,12 @@
 
     <main>
         <div id="content">
+
+            <img src="{{ asset('img/portada.png') }}" alt="portada">
+
+
+
+
             <br>
             <br>
             <div class="products-container">
