@@ -13,6 +13,16 @@ class GeneralController extends Controller {
         return view('contacto');
     }
 
+    public function terminosycondiciones() {
+
+        return view('terminos');
+    }
+
+    public function politicas() {
+
+        return view('politicas');
+    }
+
     public function enviarConsulta(Request $request) {
 
         try {

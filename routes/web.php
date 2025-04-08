@@ -105,6 +105,8 @@ Route::middleware('auth')->group(function () {
 /* Gestion General */
 Route::get('/contacto', [GeneralController::class, 'contactar'])->name('contacto');
 Route::post('/consultar', [GeneralController::class, 'enviarConsulta'])->name('enviarconsulta');
+Route::get('/terminos-y-condiciones', [GeneralController::class, 'terminosycondiciones'])->name('terminos');
+Route::get('/politicas', [GeneralController::class, 'politicas'])->name('politicas');
 
 /* Usuarios */
 Route::middleware(['auth', 'admin'])->group(function () {

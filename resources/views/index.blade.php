@@ -8,7 +8,7 @@
     <main>
         <div id="content">
 
-            <img src="{{ asset('img/portada.png') }}" alt="portada">
+            <img class="portada" src="{{ asset('img/portadabolsa.png') }}" alt="portada">
 
 
 
