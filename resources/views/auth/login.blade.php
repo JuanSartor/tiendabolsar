@@ -57,7 +57,7 @@
                     {{ __('Olvidaste tu contraseña?') }}
                 </a>
                 @endif
-                <div style=" display: flex;  gap: 10px;   align-items: center;">
+                <div class="f12mb" style=" display: flex;  gap: 10px;   align-items: center;">
                     <x-button class="ml-3">
                         {{ __('Ingresar') }}
                     </x-button>

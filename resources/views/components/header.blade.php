@@ -21,7 +21,9 @@
             <ul>
                 <li style="background: var(--verde-oscuro); ">
                     <a href="{{ route('home') }}">
-                        <img style="height: 27px; margin-right: 2px;  position: relative;   bottom: 1px;" src="{{ asset('faviconw.png') }}" alt="portada">Bolsar</a>
+                        <img style="height: 27px; margin-right: 2px;  position: relative;   bottom: 1px;" src="{{ asset('faviconw.png') }}" alt="portada">
+                        <span class="ocultar-mob">Bolsar</span>
+                    </a>
                 </li>
                 @foreach ($supercategorias as $supercategoria)
 

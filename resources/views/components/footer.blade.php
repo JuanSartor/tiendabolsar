@@ -3,10 +3,11 @@
 </div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 <!--PIE DE PÁGINA-->
-
+@if (!Auth::check() || Auth::user()->rol != 'admin')
 <a href="https://wa.me/5493482683183" class="whatsapp-float" target="_blank" rel="noopener">
     <img src="https://img.icons8.com/ios-filled/50/25D366/whatsapp.png" alt="WhatsApp">
 </a>
+@endif
 <footer  id = "footer">
     <div style="margin-left: 0px; margin-right: 0px;" class="row">
         <div class="col-md-4">
@@ -15,12 +16,12 @@
         </div>
         <div class="col-md-4">
             <div>
-                <a style="color: white; text-decoration: none;" href="{{url('/terminos-y-condiciones')}}">
+                <a class="f14mb" style="color: white; text-decoration: none;" href="{{url('/terminos-y-condiciones')}}">
                     Terminos y condiciones
                 </a>
             </div>
-            <div>
-                <a style="color: white; text-decoration: none;" href="{{url('/politicas')}}">
+            <div class="mg15mb">
+                <a class="f14mb" style="color: white; text-decoration: none;" href="{{url('/politicas')}}">
                     Politicas de privacidad
                 </a>
             </div>

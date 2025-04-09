@@ -617,49 +617,33 @@ button{
     height: 600px;
 }
 
-
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    background-color: transparent;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    animation: float 2s ease-in-out infinite;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    transition: transform 0.3s ease;
-}
-
-.whatsapp-float img {
-    width: 100%;
-    height: auto;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.05); /* Ligero zoom al pasar el mouse */
-}
-
-@keyframes float {
-    0%{
-        transform: translateY(0px);
-    }
-    50%{
-        transform: translateY(-8px);
-    }
-    100%{
-        transform: translateY(0px);
-    }
-}
-
-
 /*query para mobile*/
 @media (max-width: 700px) {
+    .li-ingresar{
+        margin-right: 5px;
+
+    }
+    .mg15mb{
+        margin-bottom: 15px;
+    }
+    .f14mb{
+        font-size: 14px;
+    }
+    .f12mb{
+        font-size: 12px;
+    }
+    #menu ul {
+        margin-left: 0px;
+    }
+    .product img {
+        height: 140px;
+    }
+    .portada{
+        height: 240px;
+    }
+    .ocultar-mob{
+        display: none;
+    }
     #logo{
         margin-left: 1px;
         width: 100%;
@@ -704,14 +688,12 @@ button{
     }
 
     .dropdown-btn-mob{
-        padding: 6px 11px;
-        position: relative;
-        top: 30px;
+        padding: 0px 11px;
     }
     .dropdown-content {
-        margin-top: 30px;
         font-size: 14px;
         min-width: 120px;
+        right: 7px;
     }
     .pd-mob{
         padding: 10px 15px !important;
@@ -813,3 +795,44 @@ button{
         display: none;
     }
 }
+
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    animation: float 2s ease-in-out infinite;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float img {
+    width: 100%;
+    height: auto;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.05); /* Ligero zoom al pasar el mouse */
+}
+
+@keyframes float {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-8px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
