@@ -18,10 +18,10 @@
 
         {{-- Menu de supercategorias--}}
         <nav id="menu">
-            <ul>
+            <ul class="pdl2">
                 <li style="background: var(--verde-oscuro); ">
                     <a href="{{ route('home') }}">
-                        <img style="height: 27px; margin-right: 2px;  position: relative;   bottom: 1px;" src="{{ asset('faviconw.png') }}" alt="portada">
+                        <img style="height: 27px;   position: relative;   bottom: 1px;" src="{{ asset('faviconw.png') }}" alt="portada">
                         <span class="ocultar-mob">Bolsar</span>
                     </a>
                 </li>
@@ -31,7 +31,7 @@
 
                 <li>
                     <div class="dropdown">
-                        <a style="background-color: white; color: black; font-weight: bold;" class="dropdown-btn">
+                        <a  style="background-color: white; color: black; font-weight: bold;" class="dropdown-btn pdlr5">
                             {{ ucfirst($supercategoria->nombre) }}
                         </a>
 
@@ -51,7 +51,7 @@
 
                 @endforeach
                 <li>
-                    <a style="color: black; font-weight: bold;" href="{{ route('contacto') }}">Contacto</a>
+                    <a class="pdlr5" style="color: black; font-weight: bold;" href="{{ route('contacto') }}">Contacto</a>
                 </li>
 
                 <li class="li-ingresar">
@@ -70,24 +70,24 @@
                                 &#9776; <!-- Código HTML para el icono de hamburguesa -->
                             </div>
                         </button>
-                        <div class="dropdown-content">
-                            <a style="color: black; " href="{{ url('/miperfil') }}">Mi perfil</a>
+                        <div class="dropdown-content drop-menu">
+                            <a class="ajuste-drop" style="color: black; " href="{{ url('/miperfil') }}">Mi perfil</a>
                             @if( Auth::user()->rol === 'admin')
-                            <a href="{{ url('/dashboard') }}">Metricas</a>
+                            <a class="ajuste-drop"  href="{{ url('/dashboard') }}">Metricas</a>
                             @endif  
 
                             @if( Auth::user()->rol === 'admin')
-                            <hr>
-                            <a href="{{ url('/supercategorias') }}">Gestionar supercategorias</a>
-                            <a href="{{ url('/categorias') }}">Gestionar categorias</a>
-                            <a href="{{ url('/productos')}}">Gestionar productos</a>
-                            <a href="{{ url('/pedidos')}}">Gestionar pedidos</a>
-                            <a href="{{ url('/usuarios')}}">Gestionar Usuarios</a>
-                            <hr>
+                            <hr style="color: black;">
+                            <a class="ajuste-drop"  href="{{ url('/supercategorias') }}">Gestionar supercategorias</a>
+                            <a class="ajuste-drop"  href="{{ url('/categorias') }}">Gestionar categorias</a>
+                            <a class="ajuste-drop"  href="{{ url('/productos')}}">Gestionar productos</a>
+                            <a class="ajuste-drop"  href="{{ url('/pedidos')}}">Gestionar pedidos</a>
+                            <a class="ajuste-drop"  href="{{ url('/usuarios')}}">Gestionar Usuarios</a>
+                            <hr style="color: black;">
                             @endif  
 
-                            <a href="{{ url('/carrito') }}">Ver el carrito</a>
-                            <a href="{{ url('/pedidos/mispedidos') }}">Mis pedidos</a>
+                            <a class="ajuste-drop"  href="{{ url('/carrito') }}">Ver el carrito</a>
+                            <a class="ajuste-drop"  href="{{ url('/pedidos/mispedidos') }}">Mis pedidos</a>
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
