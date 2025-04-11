@@ -30,7 +30,7 @@
             <a style="color: black;" href="https://instagram.com/bolsarbolsasdepapel" target="_blank">
                 <i class="bi bi-instagram" style="font-size: 24px; color: #E4405F;"></i>
             </a>
-            <a style=" margin-left: 10px; margin-right: 10px; color: black;" href="https://facebook.com/tu_pagina" target="_blank">
+            <a style=" margin-left: 10px; margin-right: 10px; color: black;" href="https://facebook.com/bolsar.bolsasybobinasdepapel" target="_blank">
                 <i class="bi bi-facebook" style="font-size: 24px; color: #1877F2;"></i>
             </a>
             <a href="https://wa.me/5493482683183" target="_blank">

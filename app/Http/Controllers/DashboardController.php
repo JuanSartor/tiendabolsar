@@ -22,6 +22,7 @@ class DashboardController extends Controller {
         $fechaFin = Carbon::now()->endOfMonth(); // Fin del mes actual
 
         $ventas = Pedido::selectRaw('YEAR(created_at) as anio, MONTH(created_at) as mes_num, COUNT(id) as cantidad')
+                ->where('estado', 'pagado')
                 ->whereBetween('created_at', [$fechaInicio, $fechaFin]) // Solo últimos 12 meses
                 ->groupBy('anio', 'mes_num')
                 ->orderBy('anio')
@@ -64,9 +65,10 @@ class DashboardController extends Controller {
         ////////////////////////////////////
 
         $fechaInicioLinea = Carbon::now()->subMonths(12)->startOfMonth(); // Hace 12 meses
-        $fechaFinLinea = Carbon::now()->subMonth()->endOfMonth(); // Hasta el mes pasado
+        $fechaFinLinea = Carbon::now()->endOfMonth(); // Hasta el mes pasado
 
         $ventasLinea = Pedido::selectRaw('YEAR(created_at) as anio, MONTH(created_at) as mes_num, SUM(costo_envio+costo_productos) as costo')
+                ->where('estado', 'pagado')
                 ->whereBetween('created_at', [$fechaInicioLinea, $fechaFinLinea])
                 ->groupBy('anio', 'mes_num')
                 ->orderBy('anio')
@@ -85,6 +87,7 @@ class DashboardController extends Controller {
         //////////////////
 
         $ventasMesActual = Pedido::whereMonth('created_at', Carbon::now()->month)
+                ->where('estado', 'pagado')
                 ->whereYear('created_at', Carbon::now()->year)
                 ->sum(DB::raw('costo_productos + costo_envio')); // Suma el total de todas las ventas del mes actual
         ///////////////////////

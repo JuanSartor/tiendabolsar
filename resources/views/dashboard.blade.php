@@ -49,7 +49,7 @@ type: 'bar',
         data: {
         labels: @json($labels),
                 datasets: [{
-                label: 'Ventas',
+                label: 'Cantidad de ventas',
                         data: @json($data),
                         backgroundColor: @json($backgroundColors),
                         borderColor: @json($backgroundColors),
@@ -67,7 +67,7 @@ type: 'bar',
                 data: {
                 labels: @json($labelsLinea), // Mes y año
                         datasets: [{
-                        label: 'Ventas',
+                        label: 'Total vendido: $ARS',
                                 data: @json($dataLinea), // Cantidad de ventas
                                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                                 borderColor: 'rgba(75, 192, 192, 1)',
