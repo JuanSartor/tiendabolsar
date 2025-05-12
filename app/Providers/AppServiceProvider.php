@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\Models\Categoria;
 use App\Models\Supercategoria;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\File;
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -45,6 +45,14 @@ class AppServiceProvider extends ServiceProvider {
                     ->get();
 
             $view->with('supercategorias', $supercategorias);
+
+            $imagenes = collect(File::files(public_path('img')))
+                    ->map(fn($file) => $file->getFilename())
+                    ->filter(fn($name) => preg_match('/\.(jpg|jpeg|png|webp)$/i', $name))
+                    ->values()
+                    ->all();
+
+            $view->with('imagenes', $imagenes);
         });
     }
 }
