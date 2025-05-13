@@ -723,10 +723,31 @@ button{
     display: flex;
     transition: transform 0.9s ease-in-out;
 }
-
+.txt-alineacion{
+    text-align: left;
+}
 
 /*query para mobile*/
 @media (max-width: 700px) {
+    .confi{
+        text-align: center !important;
+        margin-top: 0px !important;
+    }
+    .div-h2{
+        position: relative;
+        top: 35px;
+    }
+    .txt-h2-index{
+        margin-left: 35px;
+        text-align: left;
+        margin-top: 15px;
+    }
+    .txt-alineacion{
+        text-align: center;
+    }
+    .txt-h1-index{
+        font-size: 25px;
+    }
     .pdl2{
         padding-left: 2px;
     }

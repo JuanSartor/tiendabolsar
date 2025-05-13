@@ -13,12 +13,13 @@
                 <div class="col-sm-6">
                     <img class="portada" src="{{ asset('img/portadabolsa.png') }}" alt="portada">
                 </div>
-                <div class="col-sm-6" style="text-align: left">
+                <div class="col-sm-6 txt-alineacion" >
                     <h1 class="txt-h1-index slide-in-right">EL MULTIVERSO DEL PACKAGING</h1>
-
-                    <h2 class="txt-h2-index slide-in-up"><i class="bi bi-star-fill"></i> Calidad Asegurada</h2>
-                    <h2 class="txt-h2-index slide-in-up"><i class="bi bi-person-check-fill"></i> Atencion Personalizada</h2>
-                    <h2 class="txt-h2-index slide-in-up"><i class="bi bi-truck"></i> Envio A Todo El Pais</h2>
+                    <div class="div-h2">
+                        <h2 class="txt-h2-index slide-in-up"><i class="bi bi-star-fill"></i> Calidad Asegurada</h2>
+                        <h2 class="txt-h2-index slide-in-up"><i class="bi bi-person-check-fill"></i> Atencion Personalizada</h2>
+                        <h2 class="txt-h2-index slide-in-up"><i class="bi bi-truck"></i> Envios A Todo El Pais</h2>
+                    </div>
                 </div>
             </div>
 
@@ -48,7 +49,7 @@
 
 
             <div class="row">
-                <h2 style="margin-left: 0px;    " class="txt-h2-index slide-in-up">CONFIAN EN NOSOTROS</h2>
+                <h2 style="margin-left: 0px;" class="txt-h2-index slide-in-up confi">CONFIAN EN NOSOTROS</h2>
             </div>
             <div class="custom-carousel-container">
                 <div class="custom-carousel" id="carousel">
