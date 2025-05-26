@@ -726,6 +726,67 @@ button{
 .txt-alineacion{
     text-align: left;
 }
+.ajustes-img{
+    width: 50% !important;
+}
+.ajustes-div-img{
+    float: none !important;
+    margin-left: 15%;
+}
+
+
+
+.carousel-item-custom {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-item-custom img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.carousel-item-custom:hover img {
+  transform: scale(1.2);
+}
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.zoom-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+}
+
+.image-wrapper:hover .zoom-img {
+    opacity: 1;
+}
+
+.image-wrapper:hover .main-img {
+    opacity: 0;
+}
+
+.main-img,
+.zoom-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 1.2s ease-in-out;
+}
+
 
 /*query para mobile*/
 @media (max-width: 700px) {

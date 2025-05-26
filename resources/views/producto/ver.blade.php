@@ -12,11 +12,11 @@
             <h1>{{ $product->nombre }}</h1>
             <br>
             <div id="detail-product">
-                <div  class="image margen-ver-producto">
+                <div  class="image margen-ver-producto ajustes-div-img">
                     @if ($product->imagen)
-                    <img src="{{ asset('storage/' . $product->imagen) }}" alt="{{ $product->nombre }}">
+                    <img class="ajustes-img" src="{{ asset('storage/' . $product->imagen) }}" alt="{{ $product->nombre }}">
                     @else
-                    <img src="{{ asset('img/camiseta.png') }}" alt="Imagen por defecto">
+                    <img class="ajustes-img" src="{{ asset('img/camiseta.png') }}" alt="Imagen por defecto">
                     @endif
                 </div>
                 <div class="data">

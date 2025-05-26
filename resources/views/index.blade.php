@@ -55,7 +55,12 @@
                 <div class="custom-carousel" id="carousel">
                     @foreach ($imagenes as $imagen)
                     <div class="carousel-item-custom">
-                        <img src="{{ asset('img/' . $imagen) }}" alt="Imagen" />
+                        <a href="https://www.instagram.com/bolsarbolsasdepapel/" target="_blank">
+                            <div class="image-wrapper">
+                                <img src="{{ asset('img/' . $imagen) }}" alt="Imagen    " class="main-img" />
+                                <img src="{{ asset('img/zoom/' . $imagen) }}" alt="Imagen zoom" class="zoom-img" />
+                            </div>
+                        </a>
                     </div>
                     @endforeach
                 </div>
