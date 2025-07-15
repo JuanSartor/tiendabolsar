@@ -1,3 +1,77 @@
+<style>
+    /* Ocultar el menú normal en mobile */
+    @media (max-width: 768px) {
+        .menu-desktop {
+            display: none;
+        }
+        .lable-super{
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+            font-size: 13px;
+            padding-left: 7px;
+            padding-right: 7px;
+            font-family: cursive;
+            width: 90%;
+        }
+        .lbl-productos{
+            font-size: 13px;
+            font-weight: bold;
+            color: black;
+            cursor: pointer;
+            font-family: cursive;
+            width: 100px;
+            border: 2px solid var(--verde-oscuro);
+            border-radius: 10px;
+            align-items: center;
+            text-align: center;
+            margin-top: 0px;
+            margin-right: 10px;
+        }
+        .a-contact{
+            border: 2px solid var(--verde-oscuro) !important;
+            border-radius: 10px;
+            align-items: center;
+            text-align: center;
+
+        }
+    }
+
+    /* Ocultar el menú hamburguesa en escritorio */
+    @media (min-width: 769px) {
+        .menu-mobile {
+            display: none;
+        }
+    }
+
+
+
+    .mobile-cat-menu {
+        display: none;
+        background: white;
+        padding: 10px;
+        position: absolute;
+        z-index: 999;
+        width: 200px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Mostrar el menú principal cuando se abre la hamburguesa */
+    #menu-mobile-toggle:checked + label + .mobile-cat-menu {
+        display: block;
+    }
+
+    .submenu-mobile {
+        display: none;
+    }
+
+    /* Mostrar categorías cuando se selecciona una supercategoría */
+    input[type="checkbox"]:checked + label + .submenu-mobile {
+        display: block;
+    }
+</style>
+
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <head>
@@ -19,17 +93,19 @@
         {{-- Menu de supercategorias--}}
         <nav id="menu">
             <ul class="pdl2">
-                <li style="background: var(--verde-oscuro); ">
+
+                <!-- Menu desktop -->
+                <li class="menu-desktop" style="background: var(--verde-oscuro); ">
                     <a href="{{ route('home') }}">
                         <img style="height: 27px;   position: relative;   bottom: 1px;" src="{{ asset('faviconw.png') }}" alt="portada">
                         <span class="ocultar-mob">Bolsar</span>
                     </a>
                 </li>
+
+
                 @foreach ($supercategorias as $supercategoria)
 
-
-
-                <li>
+                <li class="menu-desktop">
                     <div class="dropdown">
                         <a  style="background-color: white; color: black; font-weight: bold;" class="dropdown-btn pdlr5">
                             {{ ucfirst($supercategoria->nombre) }}
@@ -50,9 +126,61 @@
 
 
                 @endforeach
-                <li>
-                    <a class="pdlr5" style="color: black; font-weight: bold;" href="{{ route('contacto') }}">Contacto</a>
+
+                <!-- ------------------------------------- -->
+                <!-- ------------------------------------- -->
+                <!-- ------------------------------------- -->
+
+                
+                
+                
+                <!-- Menu mobile -->
+                <li class="menu-mobile" >
+
+                    <!-- Control general: hamburguesa -->
+                    <input type="checkbox" id="menu-mobile-toggle" style="display: none;">
+                    <label for="menu-mobile-toggle" class="lbl-productos" 
+                           style="">
+                        &#9776; Productos
+                    </label>
+
+                    <!-- Menú desplegable -->
+                    <div class="mobile-cat-menu">
+
+                        @foreach ($supercategorias as $supercategoria)
+
+                        <!-- Control individual por supercategoría -->
+                        <input type="checkbox" id="supercat-{{ $supercategoria->id }}" style="display: none;">
+                        <label for="supercat-{{ $supercategoria->id }}" class="lable-super" >
+                            {{ ucfirst($supercategoria->nombre) }} &#9662; <!-- Flecha hacia abajo -->
+                        </label>
+
+                        <!-- Categorías dentro de la supercategoría -->
+                        <div class="submenu-mobile">
+                            @foreach ($supercategoria->categorias as $categoria)
+
+                            <a style="color: var(--verde-oscuro); font-weight: bold;  display: block; line-height: 2; margin-bottom: 2px; border: 1px solid;" href="{{ url('categoria/ver', ['id' => $categoria->id]) }}">
+                                {{ ucfirst($categoria->nombre) }}
+                            </a>
+
+                            @endforeach
+                        </div>
+
+                        @endforeach
+
+
+                    </div>
+
                 </li>
+
+                <li >
+                    <a class="pdlr5 a-contact" style="color: black; font-weight: bold;" href="{{ route('contacto') }}">Contacto</a>
+                </li>
+                <!-- ------------------------------------- -->
+                <!-- ------------------------------------- -->
+                <!-- ------------------------------------- -->
+
+
 
                 <li class="li-ingresar">
                     @if (Route::has('login'))
