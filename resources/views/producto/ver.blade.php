@@ -24,7 +24,7 @@
                     <p style="text-align: left;" class="description">{{ $product->descripcion }}</p>
                     <p style="text-align: left; font-weight: bold;" class="price">$ {{ $product->precio }}</p>
                     <br>
-                    <h6 class="text-aclaracion">Tiempo de produccion: 30 dias desde la confirmacion del diseño final</h6>
+                    <h6 class="text-aclaracion">El tiempo de producción puede afectar la fecha de entrega final</h6>
                     <br>
                     <a style="margin-inline:inherit;" href="{{ route('carrito.agregar', ['id' => $product->id]) }}" class="button">Comprar</a>
                 </div>
