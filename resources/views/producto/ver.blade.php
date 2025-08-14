@@ -22,11 +22,21 @@
                 <div class="data">
                     <br>
                     <p style="text-align: left;" class="description">{{ $product->descripcion }}</p>
+                    <!-- 
+                          COMENTO EL BOTON COMPRAR y todo lo relacionado a vender PARA PONER SOLO EL SITIO WEB
+                    
+                    
                     <p style="text-align: left; font-weight: bold;" class="price">$ {{ $product->precio }}</p>
                     <br>
                     <h6 class="text-aclaracion">El tiempo de producción puede afectar la fecha de entrega final</h6>
                     <br>
+                    
+                   
+             
                     <a style="margin-inline:inherit;" href="{{ route('carrito.agregar', ['id' => $product->id]) }}" class="button">Comprar</a>
+              -->
+                
+                
                 </div>
             </div>
             @else

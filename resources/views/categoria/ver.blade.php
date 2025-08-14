@@ -23,10 +23,14 @@
                     @endif
                     <h2>{{ $product->nombre }}</h2>
                 </a>
+                
+                     <!-- 
+                          COMENTO EL BOTON COMPRAR y todo lo relacionado a vender PARA PONER SOLO EL SITIO WEB
+                    
                 <p>$ {{ number_format($product->precio, 2, ',', '.') }}</p>
 
                 <a href="{{ route('carrito.agregar', ['id' => $product->id]) }}" class="button">Comprar</a>
-
+-->
             </div>
             @endforeach
 
